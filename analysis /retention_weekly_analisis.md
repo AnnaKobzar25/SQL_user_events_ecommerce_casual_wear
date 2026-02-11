@@ -13,10 +13,4 @@ Weekly retention measures how many users return to the product **N weeks after t
 - **Week 2** — users who returned 2 weeks later
 - etc.
 
-Retention is calculated as:
-
-\[
-\text{Retention}_N = \frac{\text{Users active in week } N}{\text{Users active in week } 0}
-\]
-
 
