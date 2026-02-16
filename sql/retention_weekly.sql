@@ -1,13 +1,5 @@
 -- ============================================================
 -- Weekly Retention Analysis
--- ------------------------------------------------------------
--- This query calculates weekly retention based on user activity.
--- Retention is defined as the percentage of users who return
--- in week N after their first activity week (cohort week).
---
--- Output format (long format):
---   cohort_week | week_number | users | retention_percent
--- ============================================================
 
 -- 1. Determine the cohort week (first activity week) for each user
 WITH cohort AS (
