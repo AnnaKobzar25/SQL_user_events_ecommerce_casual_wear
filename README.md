@@ -3,7 +3,7 @@ This dataset contains 320,000+ event-level user interaction records generated fr
 ##The primary goal of this project was to analyze and explore:
 1. User funnel analysis (Visit → View → Add to Cart → Checkout → Purchase)
 2. Conversion rate and drop-off analysis
-3. Retention and cohort analysis (weekly/monthly)
+3. Retention weekly/monthly
 4. New vs returning user behavior
 5. Session-based user activity
 6. Device-wise and traffic-source-wise performance
