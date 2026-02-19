@@ -1,0 +1,23 @@
+--#Session‑based user activity
+--##1Steps to calculate average session length
+--1.Combine date + time → event_timestamp
+--2. Group by user_id, session_id
+--3. Take MIN(event_timestamp) and MAX(event_timestamp)
+--4. Calculate the difference between them (session length)
+--5. Calculate the average session length
+with tb1 as (SELECT 
+user_id,
+session_id,
+TIMESTAMP(DATETIME(event_date, event_time))
+ as date_time
+FROM `innate-ally-485909-n6.Casual_Wear_1234.casual_wear` ),
+tb2 as (select user_id,
+session_id,
+min(date_time) as start_session,
+max(date_time) as end_session,
+TIMESTAMP_DIFF(max(date_time), min(date_time), SECOND) as long_session
+from tb1
+group by user_id, session_id)
+select
+avg(long_session) as average_sesion
+from tb2
