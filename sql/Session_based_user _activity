@@ -1,5 +1,4 @@
---#Session‑based user activity
---## 1Steps to calculate shortest, longest, average session length
+--# Shortest, longest, average session length
 --1.Combine date + time → event_timestamp
 --2. Group by user_id, session_id
 --3. Take MIN(event_timestamp) and MAX(event_timestamp)
