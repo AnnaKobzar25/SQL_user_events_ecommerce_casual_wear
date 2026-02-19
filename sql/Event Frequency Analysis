@@ -1,0 +1,21 @@
+--#Event Frequency Analysis:
+--##1.Event Frequency (overall):
+
+WITH tb1 AS (
+    SELECT 
+        event_type,
+        COUNT(event_type) AS number_frequently_event,
+        (
+            SELECT COUNT(event_type)
+            FROM `innate-ally-485909-n6.Casual_Wear_1234.casual_wear`
+        ) AS number_all_events
+    FROM `innate-ally-485909-n6.Casual_Wear_1234.casual_wear`
+    GROUP BY event_type
+)
+
+SELECT 
+    event_type,
+    ROUND(number_frequently_event / number_all_events, 2) * 100 AS freq_event_percent
+FROM tb1
+ORDER BY freq_event_percent DESC;
+
