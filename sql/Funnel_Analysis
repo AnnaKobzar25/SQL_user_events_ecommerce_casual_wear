@@ -1,0 +1,14 @@
+-- Funnel Analysis
+SELECT 
+    CASE 
+        WHEN event_type = 'visit' THEN 1
+        WHEN event_type = 'view' THEN 2
+        WHEN event_type = 'add_to_cart' THEN 3
+        WHEN event_type = 'checkout' THEN 4
+        ELSE 5
+    END AS funnel_number,
+    event_type,
+    COUNT(event_type) AS number_frequently_event
+FROM `innate-ally-485909-n6.Casual_Wear_1234.casual_wear`
+GROUP BY funnel_number, event_type
+ORDER BY funnel_number;
