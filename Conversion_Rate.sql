@@ -1,4 +1,4 @@
-# User funnel analysis (Visit → View → Add to Cart → Checkout → Purchase)
+# User Conversion Rate (Visit → View → Add to Cart → Checkout → Purchase)
 WITH tb1 AS (
   SELECT *
   FROM (
